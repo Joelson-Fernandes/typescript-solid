@@ -17,5 +17,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 0,
+    'no-underscore-dangle': 0,
+    'class-methods-use-this': 0,
   },
 };
