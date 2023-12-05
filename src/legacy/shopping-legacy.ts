@@ -1,7 +1,7 @@
-type CartItem = {name: string, price: number}
-type orderStatus = 'open' | 'closed';
+import { CartItem } from '../srp/entities/interfaces/cart-item';
+import { orderStatus } from '../srp/entities/interfaces/order-status';
 
-export class ShoppingCart {
+export class ShoppingCartLegacy {
   private readonly _items: CartItem[] = [];
 
   private _orderStatus:orderStatus = 'open';
@@ -56,7 +56,7 @@ export class ShoppingCart {
   }
 }
 
-const cart = new ShoppingCart();
+const cart = new ShoppingCartLegacy();
 cart.addItem({ name: 'Iphone', price: 1.999 });
 cart.addItem({ name: 'XboxS', price: 2.589 });
 cart.addItem({ name: 'G29', price: 2.705 });
