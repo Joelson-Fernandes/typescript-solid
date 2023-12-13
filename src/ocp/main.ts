@@ -7,12 +7,12 @@ import { ShoppingCart } from './entities/shopping';
 import { Messaging } from './services/messaging';
 import { Persistency } from './services/persistency';
 import { Product } from './entities/product';
-import { NoDiscount } from './entities/discount';
+import { TenPercentDiscount } from './entities/discount';
 
 // const fiftyPercentDiscount = new FiftyPercentDiscount();
-// const tenPercentDiscount = new TenPercentDiscount();
-const noDiscount = new NoDiscount();
-const cart = new ShoppingCart(noDiscount);
+const tenPercentDiscount = new TenPercentDiscount();
+// const noDiscount = new NoDiscount();
+const cart = new ShoppingCart(tenPercentDiscount);
 const message = new Messaging();
 const persistency = new Persistency();
 const order = new Order(cart, message, persistency);
