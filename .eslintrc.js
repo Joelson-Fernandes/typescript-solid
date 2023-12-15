@@ -21,5 +21,6 @@ module.exports = {
     'class-methods-use-this': 0,
     'import/extensions': 0,
     'no-useless-constructor': 0,
+    'max-classes-per-file': 0,
   },
 };
