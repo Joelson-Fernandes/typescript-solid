@@ -1,6 +1,7 @@
-import { IndividualCustomerProtocol, EnterpriseCustomerProtocol } from './interfaces/customer-protocol';
+/* eslint-disable lines-between-class-members */
+import { IndividualCustomerProtocol, EnterpriseCustomerProtocol, CustomerOrder } from './interfaces/customer-protocol';
 
-export class IndividualCustomer implements IndividualCustomerProtocol {
+export class IndividualCustomer implements IndividualCustomerProtocol, CustomerOrder {
   name: string;
 
   lastName: string;
@@ -12,8 +13,17 @@ export class IndividualCustomer implements IndividualCustomerProtocol {
     this.lastName = lastName;
     this.cpf = cpf;
   }
+
+  getName(): string {
+    return this.name;
+  }
+
+  getIDM(): string {
+    return this.cpf;
+  }
 }
-export class EnterpriseCustomer implements EnterpriseCustomerProtocol {
+
+export class EnterpriseCustomer implements EnterpriseCustomerProtocol, CustomerOrder {
   name: string;
 
   cnpj: string;
@@ -21,5 +31,13 @@ export class EnterpriseCustomer implements EnterpriseCustomerProtocol {
   constructor(name: string, cnpj: string) {
     this.name = name;
     this.cnpj = cnpj;
+  }
+
+  getName(): string {
+    return this.name;
+  }
+
+  getIDM(): string {
+    return this.cnpj;
   }
 }
